@@ -1,0 +1,54 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+
+.card {
+  width: 350px;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.1);
+}
+
+
+h2 {
+  text-align: center;
+  color: #6366f1;
+  margin-bottom: 20px;
+}
+
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+
+input:focus {
+  border-color: #6366f1;
+  outline: none;
+}
+
+
+small {
+  color: red;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

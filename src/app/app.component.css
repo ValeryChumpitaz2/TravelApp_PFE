@@ -1,0 +1,29 @@
+nav {
+  background: #6366f1;
+  padding: 15px;
+  text-align: center;
+}
+
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+}
+
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+.contenido {
+  padding: 30px;
+}
+
+
+h1 {
+  color: #4f46e5;
+  margin-bottom: 10px;
+}  

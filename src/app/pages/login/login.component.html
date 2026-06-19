@@ -1,0 +1,12 @@
+<div class="login-container">
+    <div class="card">
+        <h2> TRAVEL APP LOGIN</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <input type="email" placeholder="Correo" formControlName="email">
+            <small *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">Correo inválido</small>
+            <input type ="password" placeholder="Contraseña" formControlName="password">
+            <small *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">Minimo 6 caracteres </small>
+            <button type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+        </form>
+    </div>
+</div>
