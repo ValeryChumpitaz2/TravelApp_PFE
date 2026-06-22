@@ -8,33 +8,28 @@ import { Router } from '@angular/router';
   styleUrl: './header.component.css'
 })
 
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
 
   hora: string = '';
-  intervalo: any;
+  isLogged = false;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
+    this.checkLogin();
 
-    this.actualizarHora();
-
-    this.intervalo = setInterval(() => {
-      this.actualizarHora();
+    setInterval(() => {
+      this.hora = new Date().toLocaleTimeString();
     }, 1000);
   }
 
-  actualizarHora() {
-    const now = new Date();
-    this.hora = now.toLocaleTimeString();
-  }
-
-  ngOnDestroy() {
-    clearInterval(this.intervalo);
+  checkLogin() {
+    this.isLogged = localStorage.getItem('auth') === 'true';
   }
 
   logout() {
     localStorage.removeItem('auth');
-    this.router.navigate(['/login']);
+    this.isLogged = false;
+    this.router.navigate(['/home']);
   }
 }

@@ -1,49 +1,17 @@
 <div class="dashboard">
 
-  <h1>📊 Dashboard TravelApp</h1>
+  <aside class="sidebar">
+    <h3>Panel de Usuario</h3>
 
-  <!-- MÉTRICAS -->
-  <div class="cards">
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/perfil">Mi Perfil</a>
+    <a routerLink="/reservas">Mis Reservas</a>
+    <a routerLink="/favoritos">Favoritos</a>
+    <a routerLink="/home">Cerrar sesión</a>
+  </aside>
 
-    <div class="card">
-      <h2>{{ destinos }}</h2>
-      <p>Destinos</p>
-    </div>
-
-    <div class="card">
-      <h2>{{ paquetes }}</h2>
-      <p>Paquetes</p>
-    </div>
-
-    <div class="card">
-      <h2>{{ ofertas }}</h2>
-      <p>Ofertas activas</p>
-    </div>
-
-  </div>
-
-  <!-- ACCESOS -->
-  <div class="acciones">
-
-    <button routerLink="/destinos">Ver destinos</button>
-    <button routerLink="/paquetes">Ver paquetes</button>
-    <button routerLink="/contacto">Contacto</button>
-
-  </div>
-
-  <!-- NOTIFICACIONES -->
-  <div class="notificaciones">
-
-    <h3>🔔 Notificaciones</h3>
-
-    <div class="lista">
-
-      <div class="notif" *ngFor="let n of notificaciones">
-        {{ n }}
-      </div>
-
-    </div>
-
-  </div>
+  <main class="content">
+    <h2>Bienvenido</h2>
+  </main>
 
 </div>

@@ -19,24 +19,5 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   login() {
-
-    if (!this.usuario || !this.password) {
-      this.error = true;
-      setTimeout(() => this.error = false, 1200);
-      return;
-    }
-
-    this.loading = true;
-
-    setTimeout(() => {
-
-      this.loading = false;
-
-      localStorage.setItem('auth', 'true');
-
-      // transición suave antes de entrar
-      this.router.navigate(['/home']);
-
-    }, 1200);
-  }
-}
+  this.router.navigate(['/dashboard']);
+}}

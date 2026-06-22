@@ -9,19 +9,24 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class AppComponent {
 
-  showLayout = false;
+  mostrarHeader = true;
 
   constructor(private router: Router) {
 
     this.router.events.subscribe(event => {
-
       if (event instanceof NavigationEnd) {
 
-        this.showLayout = !event.url.includes('login');
+        const url = event.urlAfterRedirects;
 
+        // ❌ ocultar en login y dashboard
+        this.mostrarHeader = !(
+          url.includes('/login') ||
+          url.includes('/dashboard') ||
+          url.includes('/perfil') ||
+          url.includes('/reservas') ||
+          url.includes('/favoritos')
+        );
       }
-
     });
-
   }
 }

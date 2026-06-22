@@ -1,44 +1,56 @@
-.header {
+nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 15px 30px;
-  background: #1e2a38;
-  color: white;
+  gap: 20px;
+  padding: 15px 25px;
+
+  /* GLASSMORPHISM */
+  background: rgba(30, 42, 56, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo {
-  font-size: 20px;
+/* LINKS */
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+/* HOVER */
+nav a:hover {
+  background: rgba(255, 126, 95, 0.9);
+  color: #1e2a38;
+  transform: translateY(-2px);
+}
+
+/* LOGIN DESTACADO */
+nav a:last-child {
+  background: #ff7e5f;
+  color: #1e2a38;
   font-weight: bold;
 }
 
-.menu a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
+nav a:last-child:hover {
+  background: white;
+  color: #1e2a38;
 }
 
-.menu a:hover {
-  color: #ff7e5f;
-}
-
-.right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.time {
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-button {
-  padding: 6px 10px;
-  border: none;
-  background: #ff7e5f;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
