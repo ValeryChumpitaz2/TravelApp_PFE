@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,62 +10,33 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
 
+  usuario = '';
+  password = '';
 
-  loginForm: FormGroup;
+  loading = false;
+  error = false;
 
+  constructor(private router: Router) {}
 
-  constructor(
-    private fb: FormBuilder,
-    private router: Router
-  ) {
+  login() {
 
+    if (!this.usuario || !this.password) {
+      this.error = true;
+      setTimeout(() => this.error = false, 1200);
+      return;
+    }
 
-    this.loginForm = this.fb.group({
+    this.loading = true;
 
+    setTimeout(() => {
 
-      email: ['', [Validators.required, Validators.email]],
+      this.loading = false;
 
+      localStorage.setItem('auth', 'true');
 
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      // transición suave antes de entrar
+      this.router.navigate(['/home']);
 
-
-    });
-
-
-  }
-
-
- login() {
-
-
-  console.log(this.loginForm.value);
-
-
-  const email = this.loginForm.value.email;
-  const password = this.loginForm.value.password;
-
-
-  if (
-    email === 'admin@travelapp.com' &&
-    password === '123456'
-  ) {
-
-
-    console.log('Login correcto');
-
-
-    this.router.navigate(['/home']);
-
-
-  } else {
-
-
-    console.log('Login incorrecto');
-
-
-    alert('Credenciales incorrectas');
-
-
-  }
+    }, 1200);
   }
 }

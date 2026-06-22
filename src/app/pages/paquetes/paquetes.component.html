@@ -1,0 +1,39 @@
+<div class="paquetes">
+
+  <h1>Paquetes de viaje ✈️</h1>
+
+  <div class="grid">
+
+    <div class="card" *ngFor="let p of paquetes">
+
+      <div class="img-wrapper">
+
+        <img [src]="p.imagen">
+
+        <span class="badge">
+          -{{ p.descuento }}%
+        </span>
+
+      </div>
+
+      <div class="content">
+
+        <h3>{{ p.titulo }}</h3>
+
+        <p class="duracion">{{ p.duracion }}</p>
+
+        <div class="precio">
+          ${{ p.precio }} USD
+        </div>
+
+        <button>
+          Reservar paquete
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,12 +1,46 @@
-<div class="login-container">
-    <div class="card">
-        <h2> TRAVEL APP LOGIN</h2>
-        <form [formGroup]="loginForm" (ngSubmit)="login()">
-            <input type="email" placeholder="Correo" formControlName="email">
-            <small *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">Correo inválido</small>
-            <input type ="password" placeholder="Contraseña" formControlName="password">
-            <small *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">Minimo 6 caracteres </small>
-            <button type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
-        </form>
+<div class="login-container" [class.exit]="loading">
+
+  <!-- FONDO -->
+  <div class="bg-overlay"></div>
+
+  <!-- LADO IZQUIERDO -->
+  <div class="left-panel">
+    <h1>TravelApp ✈️</h1>
+    <p>Descubre destinos únicos y vive experiencias inolvidables.</p>
+  </div>
+
+  <!-- LOGIN -->
+  <div class="right-panel">
+
+    <div class="login-card" [class.shake]="error">
+
+      <h2>Bienvenida</h2>
+
+      <input
+        type="text"
+        placeholder="Usuario"
+        [(ngModel)]="usuario"
+      >
+
+      <input
+        type="password"
+        placeholder="Contraseña"
+        [(ngModel)]="password"
+      >
+
+      <button (click)="login()" [disabled]="loading">
+
+        <span *ngIf="!loading">Entrar</span>
+        <span *ngIf="loading" class="loader"></span>
+
+      </button>
+
+      <small *ngIf="error" class="error">
+        Usuario o contraseña inválidos
+      </small>
+
     </div>
+
+  </div>
+
 </div>

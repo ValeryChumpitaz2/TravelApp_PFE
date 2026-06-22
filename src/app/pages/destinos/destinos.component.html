@@ -1,11 +1,29 @@
-<h2>Destinos</h2>
+<div class="destinos">
 
-<ul>
+  <h1>Destinos disponibles ✈️</h1>
 
- <li>París</li>
+  <div class="grid">
 
- <li>Roma</li>
+    <div class="card" *ngFor="let d of destinos">
 
- <li>Madrid</li>
+      <img [src]="d.imagen">
 
-</ul>
+      <div class="info">
+
+        <span class="pais">{{ d.pais }}</span>
+
+        <h3>{{ d.nombre }}</h3>
+
+        <p>${{ d.precio }} USD</p>
+
+        <button [routerLink]="['/destinos', d.id]">
+          Ver detalle
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

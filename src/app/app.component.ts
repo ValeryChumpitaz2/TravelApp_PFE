@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'travel-app';
+
+  showLayout = false;
+
+  constructor(private router: Router) {
+
+    this.router.events.subscribe(event => {
+
+      if (event instanceof NavigationEnd) {
+
+        this.showLayout = !event.url.includes('login');
+
+      }
+
+    });
+
+  }
 }

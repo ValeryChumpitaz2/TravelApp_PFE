@@ -1,31 +1,50 @@
-<nav class="navbar">
+<div class="home-container">
 
-  <div class="logo">
-    TravelApp
-  </div>
+  <!-- HERO -->
+  <section class="hero">
 
-  <div class="menu">
-    <a routerLink="/home">Inicio</a>
-    <a routerLink="/destinos">Destinos</a>
-    <a routerLink="/contacto">Contacto</a>
+    <div class="hero-content">
 
-    <button (click)="logout()">
-      Cerrar Sesión
-    </button>
-  </div>
+      <h1>Bienvenido, {{ usuario }} ✈️</h1>
 
-</nav>
+      <p>
+        Descubre experiencias únicas y destinos increíbles alrededor del mundo.
+      </p>
 
-<section class="hero">
+      <button routerLink="/destinos">
+        Explorar más
+      </button>
 
-  <div class="hero-content">
+    </div>
 
-    <h1>Descubre el mundo con TravelApp</h1>
+  </section>
 
-    <p>
-      Encuentra los mejores destinos turísticos y vive experiencias inolvidables.
-    </p>
+  <!-- DESTACADOS -->
+ <section class="section">
+
+  <h2>Destinos destacados</h2>
+
+  <div class="cards">
+
+    <div class="card" *ngFor="let item of destacados">
+
+      <div class="img-wrapper">
+        <img [src]="item.imagen" />
+        <span class="badge">Top</span>
+      </div>
+
+      <div class="card-body">
+        <h3>{{ item.titulo }}</h3>
+        <p>{{ item.descripcion }}</p>
+
+        <button class="btn-card">
+          Ver más
+        </button>
+      </div>
+
+    </div>
 
   </div>
 
 </section>
+</div>

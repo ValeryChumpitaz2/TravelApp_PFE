@@ -8,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class ContactoComponent {
 
+  nombre = '';
+  email = '';
+  mensaje = '';
+
+  enviar() {
+    if (!this.nombre || !this.email || !this.mensaje) {
+      alert('Completa todos los campos');
+      return;
+    }
+
+    alert('Mensaje enviado correctamente ✈️');
+
+    this.nombre = '';
+    this.email = '';
+    this.mensaje = '';
+  }
 }

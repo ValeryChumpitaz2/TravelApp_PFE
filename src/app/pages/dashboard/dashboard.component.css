@@ -1,0 +1,84 @@
+.dashboard {
+  padding: 40px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* TITULO */
+.dashboard h1 {
+  color: #1e2a38;
+  margin-bottom: 30px;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 32px;
+  color: #ff7e5f;
+}
+
+/* ACCIONES */
+.acciones {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.acciones button {
+  padding: 10px 15px;
+  border: none;
+  background: #1e2a38;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.acciones button:hover {
+  background: #ff7e5f;
+}
+
+/* NOTIFICACIONES */
+.notificaciones {
+  margin-top: 40px;
+}
+
+.lista {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notif {
+  background: white;
+  padding: 10px;
+  border-left: 4px solid #ff7e5f;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
